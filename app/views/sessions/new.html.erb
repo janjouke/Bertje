@@ -1,0 +1,16 @@
+<center>
+	<div id="logo">
+		<%= image_tag "logo.gif" %>
+	</div>
+	<%= form_tag sessions_path, id:"login_form" do %>
+	  <p>
+	    <!-- <%= label_tag :login, "Username or Email Address" %><br /> -->
+	    <%= text_field_tag :login, params[:login] %>
+	  </p>
+	  <p>
+	    <!-- <%= label_tag :password %><br /> -->
+	    <%= password_field_tag :password %>
+	  </p>
+	  <p><%= submit_tag "Log in" %></p>
+	<% end %>
+</center>

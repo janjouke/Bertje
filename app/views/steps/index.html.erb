@@ -1,0 +1,14 @@
+
+<div>
+<%= link_to 'Start a New Project/idea', new_step_path %>
+</div><br />
+<% @steps.each do |step| %>
+    <div class="step_preview">
+			<div id="body">
+				<%= sanitize(step.body) %>
+			</div>
+			<div id="menu">
+				<%= link_to 'Show', step %>
+			</div>
+		</div>
+<% end %>

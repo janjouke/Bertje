@@ -1,0 +1,26 @@
+<div class="step">
+	<div id="appreciation">
+ 	 /\ <br /> <%= step.appreciations.sum(:value) %> <br /> \/
+	</div>
+	<div id="body">
+		<%= sanitize(step.body) %> 
+		(<%= step.user.username %>)
+		<%= link_to 'Edit', edit_step_path(step) %>
+		<div id="comments">
+			<% step.comments.each do |comment| %>
+				<div class="comment"><%= sanitize(comment.body) %> (<i><%= sanitize(comment.user.username) %></i>)</div>
+			<% end %>
+			<% #form_for @comment do |f| %>
+			<% #f.text_field :comment %>
+			<% #end %>
+		</div>
+	</div>
+	<div id="add_button">+</div>
+</div>
+<% if !step.substeps.blank? %>
+	<div id="substeps">
+		<% 	step.substeps.each do |substep| %>
+		<%= render partial:"step", locals:{step:substep} %>
+		<% 	end %>
+	</div>
+<% end %>
