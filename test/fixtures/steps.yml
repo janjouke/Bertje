@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  parent: 1
+  content: MyText
+  type: 
+
+two:
+  parent: 1
+  content: MyText
+  type: 
