@@ -2,7 +2,7 @@ class Step < ActiveRecord::Base
   has_many :comments
   has_many :tags
   has_many :appreciations
-  belongs_to :users
+  belongs_to :user
   
   attr_accessible :body, :parent_id, :step_type, :user_id, :title, :appreciation_counter
   
